@@ -1,0 +1,50 @@
+<!DOCTYPE.html>
+<html ng-app="bookartApp">
+
+<head>
+    <title>Bookart</title>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <!-- Angular Plugin -->
+    <script type="text/javascript" src="https://code.angularjs.org/1.4.8/angular.min.js"></script>
+    <!-- BootStrap Plugin -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <!-- Route Plugin -->
+    <script src="https://code.angularjs.org/1.4.8/angular-route.min.js"></script>
+    <!-- Resource Plugin -->
+    <script src="https://code.angularjs.org/1.4.8/angular-resource.min.js"></script>
+    <!-- Animate Plugin -->
+    <script src="https://code.angularjs.org/1.4.8/angular-animate.min.js"></script>
+    <!-- Reference JS File -->
+    <script src="app.js"></script>
+    <!-- Reference CSS File -->
+    <link rel="stylesheet" href="styles/header.css">
+    <!-- Reference CONTROLLERS File -->
+    <script src="controllers/bookListCtrl.js"></script>
+    <script src="controllers/kartListCtrl.js"></script>
+    <script src="controllers/headerCtrl.js"></script>
+    <script src="controllers/cacheCtrl.js"></script>
+    <script src="cacheFactory.js"></script>
+
+</head>
+
+<body>
+
+    <header ng-controller="headerCtrl">
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">{{title}}</a>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li ng-class="{active:isActive('/books')}"><a href="#books"><i class="fa fa-book"></i>BOOKS</a></li>
+                    <li ng-class="{active:isActive('/kart')}"><a href="#kart"><i class="fa fa-shopping-cart"></i>CART</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div ng-view class="container"></div>
+</body>
+
+</html>
